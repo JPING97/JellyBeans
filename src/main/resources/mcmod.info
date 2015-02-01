@@ -1,0 +1,21 @@
+[
+{
+  "modid": "JellyBeans",
+  "name": "Jelly Beans",
+  "description": "They Mean Every Flavor",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "JPING97"
+  ],
+  "credits": "JPING97 and Cupchix Server for inspiration",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
