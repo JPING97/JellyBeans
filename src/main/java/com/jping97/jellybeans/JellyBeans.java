@@ -1,21 +1,22 @@
 package com.jping97.jellybeans;
 
+import com.jping97.jellybeans.handler.ConfigurationHandler;
 import com.jping97.jellybeans.proxy.IProxy;
 import com.jping97.jellybeans.reference.Reference;
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-
-import java.sql.Ref;
-
+import cpw.mods.fml.common.event.FMLEvent;
 /**
  * Created by JPING97 on 2/1/15.
  */
 
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class JellyBeans
 {
     @Mod.Instance(Reference.MOD_ID)
@@ -29,6 +30,8 @@ public class JellyBeans
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+        FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 
     }
 
